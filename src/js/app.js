@@ -15,8 +15,6 @@ class App {
 		this.form = getRef('form');
 
 		this.init();
-		this.setVoices();
-
 		this.onTextChanged = debounce(this.onTextChanged, 250);
 	}
 
@@ -34,8 +32,6 @@ class App {
 		this.dropdown.addEventListener('change', () => this.update());
 		this.pitch.addEventListener('change', () => this.update());
 		this.rate.addEventListener('change', () => this.update());
-
-		setTimeout(() => this.speak(), 500);
 	}
 
 	prefill() {
