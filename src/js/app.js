@@ -16,6 +16,8 @@ class App {
 		this.setVoices();
 
 		this.onTextChanged = debounce(this.onTextChanged, 250);
+
+		setTimeout(() => this.speak(), 500);
 	}
 
 	init() {

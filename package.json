@@ -2,22 +2,19 @@
   "name": "craptalker",
   "version": "0.0.1",
   "description": "Craptalker 3000",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
+    "clear": "rimraf ./dist && rimraf ./.cache",
     "dev": "parcel ./src/index.html",
-    "clear": "rimraf ./dist && rimraf ./.cache && rimraf ./.parcel-cache",
+    "production": "parcel build ./src/index.html --public-url ./",
+    "build": "npm run clear && npm run production",
     "start": "npm run clear && npm run dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pimskie/craptalker.git"
   },
-  "keywords": [
-    "ynab",
-    "ing",
-    "csv",
-    "convert"
-  ],
+  "keywords": [],
   "author": "pimskie",
   "license": "ISC",
   "bugs": {
@@ -27,7 +24,7 @@
   "dependencies": {
     "debounce": "^1.2.0",
     "eslint": "^6.8.0",
-    "parcel": "^2.0.0-alpha.3.2"
+    "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
     "sass": "^1.24.4"
