@@ -1,6 +1,8 @@
 import debounce from 'debounce';
 import getRef from './utils/get-ref';
 
+const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
 class App {
 	constructor() {
 		this.speech = window.speechSynthesis;
@@ -16,11 +18,15 @@ class App {
 		this.setVoices();
 
 		this.onTextChanged = debounce(this.onTextChanged, 250);
-
-		setTimeout(() => this.speak(), 500);
 	}
 
 	init() {
+		if (!isChrome) {
+			getRef('app').classList.add('is-not-chrome');
+
+			return;
+		}
+
 		this.speech.addEventListener('voiceschanged', () => this.setVoices());
 		this.form.addEventListener('submit', e => this.onSubmit(e));
 
@@ -28,6 +34,8 @@ class App {
 		this.dropdown.addEventListener('change', () => this.update());
 		this.pitch.addEventListener('change', () => this.update());
 		this.rate.addEventListener('change', () => this.update());
+
+		setTimeout(() => this.speak(), 500);
 	}
 
 	prefill() {
