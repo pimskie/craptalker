@@ -2,11 +2,11 @@
   "name": "craptalker",
   "version": "0.0.1",
   "description": "Craptalker 3000",
-  "main": "dist/index.html",
+  "main": "docs/index.html",
   "scripts": {
-    "clear": "rimraf ./dist && rimraf ./.cache",
+    "clear": "rimraf ./docs && rimraf ./.cache",
     "dev": "parcel ./src/index.html",
-    "production": "parcel build ./src/index.html --public-url ./",
+    "production": "parcel build ./src/index.html --out-dir docs --public-url ./",
     "build": "npm run clear && npm run production",
     "start": "npm run clear && npm run dev"
   },
