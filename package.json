@@ -5,7 +5,7 @@
   "main": "docs/index.html",
   "scripts": {
     "clear": "rimraf ./docs && rimraf ./.cache",
-    "dev": "parcel ./src/index.html",
+    "dev": "parcel ./src/index.html  --out-dir docs",
     "production": "parcel build ./src/index.html --out-dir docs --public-url ./",
     "build": "npm run clear && npm run production",
     "start": "npm run clear && npm run dev"
