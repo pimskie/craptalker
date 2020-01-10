@@ -1,0 +1,35 @@
+{
+  "name": "craptalker",
+  "version": "0.0.1",
+  "description": "Craptalker 3000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "clear": "rimraf ./dist && rimraf ./.cache && rimraf ./.parcel-cache",
+    "start": "npm run clear && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pimskie/craptalker.git"
+  },
+  "keywords": [
+    "ynab",
+    "ing",
+    "csv",
+    "convert"
+  ],
+  "author": "pimskie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pimskie/craptalker/issues"
+  },
+  "homepage": "https://github.com/pimskie/craptalker#readme",
+  "dependencies": {
+    "debounce": "^1.2.0",
+    "eslint": "^6.8.0",
+    "parcel": "^2.0.0-alpha.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.24.4"
+  }
+}

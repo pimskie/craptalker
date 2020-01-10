@@ -1,0 +1,96 @@
+/*! Range input by Ana Tudor
+ * http://codepen.io/thebabydino/pen/JovQwE?editors=0100
+ */
+
+@mixin track() {
+	box-sizing: border-box;
+	width: 100%;
+	height: 3px;
+
+	background: $color-gray-darker;
+	border-radius: $border-radius;
+}
+
+@mixin thumb-base() {
+	border: solid .1875em rgba(silver, .2);
+	width: 50px;
+	height: 30px;
+	background: $color-primary;
+	margin-top: -14px;
+	border-radius: $border-radius;
+
+	&:hover {
+		background-color: $color-primary-darker;
+	}
+}
+
+.range-container {
+	position: relative;
+	display: flex;
+
+	&:before {
+		position: absolute;
+		top: $distance-s / 1.5;
+		right: $distance-s;
+		bottom: $distance-s / 1.5;
+		left: $distance-s;
+
+		background-image: linear-gradient(90deg, transparent 0, transparent 5px, $color-gray-light 5px);
+		background-size: 7px;
+
+		content: '';
+
+	}
+}
+
+input[type='range'] {
+	position: relative;
+	z-index: 10;
+
+	width: 100%;
+	height: 100%;
+
+	align-self: center;
+	border-radius: .5em;
+	font-size: 1em;
+	cursor: pointer;
+
+	background: transparent;
+
+	&,
+	&::-webkit-slider-runnable-track,
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track();
+	}
+	&::-moz-range-track {
+		@include track();
+	}
+	&::-ms-track {
+		@include track();
+		color: transparent;
+	}
+
+	&::-moz-range-progress {}
+
+	&::-ms-fill-lower {
+		border-radius: 100px/4;
+	}
+
+	&::-webkit-slider-thumb {
+		@include thumb-base();
+	}
+	&::-moz-range-thumb {
+		@include thumb-base();
+	}
+	&::-ms-thumb {
+		@include thumb-base();
+	}
+
+	&::-ms-tooltip {
+		display: none;
+	}
+}
