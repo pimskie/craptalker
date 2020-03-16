@@ -23,10 +23,9 @@
   "homepage": "https://github.com/pimskie/craptalker#readme",
   "dependencies": {
     "debounce": "^1.2.0",
-    "eslint": "^6.8.0",
     "parcel-bundler": "^1.12.4"
   },
   "devDependencies": {
-    "sass": "^1.24.4"
+    "sass": "^1.26.3"
   }
 }
