@@ -2,12 +2,11 @@
   "name": "craptalker",
   "version": "0.0.1",
   "description": "Craptalker 3000",
-  "main": "docs/index.html",
   "scripts": {
     "clear": "rimraf ./docs && rimraf ./.cache",
-    "dev": "parcel ./src/index.html  --out-dir docs",
-    "production": "parcel build ./src/index.html --out-dir docs --public-url ./",
-    "build": "npm run clear && npm run production",
+    "dev": "parcel ./src/index.html  --dist-dir docs",
+    "production": "parcel build ./src/index.html --dist-dir docs --public-url ./",
+    "build": "parcel build",
     "start": "npm run clear && npm run dev"
   },
   "repository": {
@@ -22,10 +21,11 @@
   },
   "homepage": "https://github.com/pimskie/craptalker#readme",
   "dependencies": {
-    "debounce": "^1.2.0",
-    "parcel-bundler": "^1.12.4"
+    "debounce": "^1.2.0"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "parcel": "^2.8.0",
     "sass": "^1.26.3"
   }
 }

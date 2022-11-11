@@ -1,175 +1,175 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700");
 
-@import './vars';
-@import './range';
+@import "./_vars.css";
+@import "./_range.scss";
 
 * {
-	&,
-	&:before,
-	&:after {
-		box-sizing: inherit;
-	}
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 h1,
 h2,
 h3 {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	list-style-type: none;
+  list-style-type: none;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
 }
 
 a {
-	color: $color-black;
+  color: var(--color-black);
 
-	&:hover {
-		text-decoration: none;
-	}
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .is-hidden {
-	display: none;
+  display: none;
 }
 
 .container {
-	margin: $distance-m $distance-s;
+  margin: var(--distance-m) var(--distance-s);
 
-	@media (min-width: 31rem) {
-		max-width: 30rem;
-		margin-right: auto;
-		margin-left: auto;
-	}
+  @media (min-width: 31rem) {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .header {
-	text-align: right;
+  text-align: right;
 }
 
 .logo {
-	display: inline-block;
-	max-width: 100px;
+  display: inline-block;
+  max-width: 100px;
 }
 
 .form {
-	position: relative;
+  position: relative;
 
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	width: 100%;
+  width: 100%;
 
-	margin-bottom: $distance-m;
+  margin-bottom: var(--distance-m);
 
-	&__label {
-		cursor: pointer;
-		font-weight: bold;
-	}
+  &__label {
+    cursor: pointer;
+    font-weight: bold;
+  }
 
-	&__item {
-		margin-bottom: $distance-s;
-	}
+  &__item {
+    margin-bottom: var(--distance-s);
+  }
 
-	&__input {
-		width: 100%;
+  &__input {
+    width: 100%;
 
-		padding: $distance-s;
+    padding: var(--distance-s);
 
-		border: 2px solid $color-gray-light;
-		border-radius: $border-radius;
+    border: 2px solid var(--color-gray-light);
+    border-radius: var(--border-radius);
 
-		&--textarea {
-			height: 6rem;
-		}
-	}
+    &--textarea {
+      height: 6rem;
+    }
+  }
 
-	.is-not-chrome &:before {
-		content: '';
+  .is-not-chrome &:before {
+    content: "";
 
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 
-		background: rgba(255, 255, 255, 0.9);
-	}
+    background: rgba(255, 255, 255, 0.9);
+  }
 }
 
 .warning {
-	background: $color-secondary;
-	margin: $distance-m 0;
-	padding: $distance-m;
-	font-weight: 700;
-	text-align: center;
+  background: var(--color-secondary);
+  margin: var(--distance-m) 0;
+  padding: var(--distance-m);
+  font-weight: 700;
+  text-align: center;
 
-	display: none;
+  display: none;
 
-	.is-not-chrome & {
-		display: block;
-	}
+  .is-not-chrome & {
+    display: block;
+  }
 }
 
 .icon-play {
-	position: absolute;
-	top: 27px;
-	right: $distance-m;
+  position: absolute;
+  top: 27px;
+  right: var(--distance-m);
 
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 
-	border-top: 15px solid #fff;
-	border-right: 15px solid #fff;
+  border-top: 15px solid #fff;
+  border-right: 15px solid #fff;
 
-	transform: rotate(45deg);
+  transform: rotate(45deg);
 
-	transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .button {
-	position: relative;
-	padding: $distance-m;
+  position: relative;
+  padding: var(--distance-m);
 
-	border: none;
-	border-radius: $border-radius;
+  border: none;
+  border-radius: var(--border-radius);
 
-	background-color: $color-primary;
-	color: #fff;
+  background-color: var(--color-primary);
+  color: #fff;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
 
-	&:hover {
-		background-color: $color-primary-darker;
+  &:hover {
+    background-color: var(--color-primary-darker);
 
-		.icon-play {
-			transform: rotate(45deg) translate($distance-s, -$distance-s);
-		}
-	}
+    .icon-play {
+      transform: rotate(45deg)
+        translate(var(--distance-s), calc(var(--distance-s) * -1));
+    }
+  }
 
-	&--small {
-		padding: $distance-s * 0.5;
-		font-size: 0.75rem;
-	}
+  &--small {
+    padding: calc(var(--distance-s) * 0.5);
+    font-size: 0.75rem;
+  }
 }
-
