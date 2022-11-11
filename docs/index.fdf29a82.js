@@ -541,7 +541,6 @@ var _debounce = require("debounce");
 var _debounceDefault = parcelHelpers.interopDefault(_debounce);
 var _getRef = require("./utils/get-ref");
 var _getRefDefault = parcelHelpers.interopDefault(_getRef);
-const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 class App {
     constructor(){
         this.speech = window.speechSynthesis;
@@ -555,10 +554,7 @@ class App {
         this.onTextChanged = (0, _debounceDefault.default)(this.onTextChanged, 250);
     }
     init() {
-        if (!isChrome) {
-            (0, _getRefDefault.default)("app").classList.add("is-not-chrome");
-            return;
-        }
+        this.setVoices();
         this.speech.addEventListener("voiceschanged", ()=>this.setVoices());
         this.form.addEventListener("submit", (e)=>this.onSubmit(e));
         this.text.addEventListener("input", ()=>this.onTextChanged());
