@@ -1,0 +1,16 @@
+:root {
+  --distance-base: 2rem;
+  --distance-s: calc(var(--distance-base) * 0.5);
+  --distance-m: var(--distance-base);
+  --distance-l: calc(var(--distance-base) * 1.5);
+
+  --color-primary: #f7006b;
+  --color-primary-darker: #b80250;
+  --color-secondary: #fddc59;
+
+  --color-black: #000;
+  --color-gray-light: #e5e5e5;
+  --color-gray-darker: #4d4b4e;
+
+  --border-radius: 0.35rem;
+}

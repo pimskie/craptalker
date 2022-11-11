@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700");
+
+@import "./_vars.css";
+@import "./_range.css";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: var(--color-black);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.container {
+  margin: var(--distance-m) var(--distance-s);
+}
+
+@media (min-width: 31rem) {
+  .container {
+    max-width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.header {
+  text-align: right;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 100px;
+}
+
+.form {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin-bottom: var(--distance-m);
+}
+
+.form__label {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form__item {
+  margin-bottom: var(--distance-s);
+}
+
+.form__input {
+  width: 100%;
+
+  padding: var(--distance-s);
+
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--border-radius);
+}
+
+.form__input--textarea {
+  height: 6rem;
+}
+
+.warning {
+  background: var(--color-secondary);
+  margin: var(--distance-m) 0;
+  padding: var(--distance-m);
+  font-weight: 700;
+  text-align: center;
+
+  display: none;
+}
+
+.icon-play {
+  position: absolute;
+  top: 27px;
+  right: var(--distance-m);
+
+  width: 30px;
+  height: 30px;
+
+  border-top: 15px solid #fff;
+  border-right: 15px solid #fff;
+
+  transform: rotate(45deg);
+
+  transition: transform 0.2s ease-out;
+}
+
+.button {
+  position: relative;
+  padding: var(--distance-m);
+
+  border: none;
+  border-radius: var(--border-radius);
+
+  background-color: var(--color-primary);
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color 0.1s ease-out;
+}
+
+.button:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.button:hover .icon-play {
+  transform: rotate(45deg)
+    translate(var(--distance-s), calc(var(--distance-s) * -1));
+}
